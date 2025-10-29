@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cairo?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: "1234"
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+server:
+  port: 8080
+
+# CORS (el filtro ya permite localhost:5173, esto es informativo)
+app:
+  cors:
+    allowed-origin: "http://localhost:5173"
+
+# ✅ JWT (mínimo 32 chars)
+cairo:
+  jwt:
+    secret: "9d8e7a3c47b5e9f1a2c4d6e8f0b2a4c6d8e0f2a4c6e8b0d2a4f6c8e0b2d4a6f8"
+    expiration: 604800000   # 7 días en ms
